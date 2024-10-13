@@ -1,3 +1,4 @@
+//fetching all  films 
 fetch("http://localhost:3000/films")
   .then((res) => res.json())
   .then((films) => {
@@ -10,10 +11,11 @@ fetch("http://localhost:3000/films")
         </li>`;
     }
 
-    const firstMovie = films[0];
+    const firstMovie = films[0]; //displaying the first film
     filmsInformation(firstMovie);
   });
 
+// film details on the write side of the screen
 function filmsInformation(film) {
   const filmTitle = document.querySelector('#title');
   const runTime = document.querySelector('#runtime');
@@ -41,6 +43,7 @@ function filmsInformation(film) {
   }
 }
 
+// buying a ticket
 function buyingTicket(filmId, unsoldTickets) {
   console.log(`Buying ticket for film ID: ${filmId}, Remaining tickets: ${unsoldTickets}`);
   if (unsoldTickets > 0) {
@@ -73,6 +76,7 @@ function buyingTicket(filmId, unsoldTickets) {
   }
 }
 
+// deleting a film
 function deleteMovie(id) {
   fetch(`http://localhost:3000/films/${id}`, {
     method: 'DELETE',
