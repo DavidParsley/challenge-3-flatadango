@@ -15,7 +15,7 @@ fetch("http://localhost:3000/films")
     filmsInformation(firstMovie);
   });
 
-// film details on the write side of the screen
+// film details on the right side of the screen
 function filmsInformation(film) {
   const filmTitle = document.querySelector('#title');
   const runTime = document.querySelector('#runtime');
